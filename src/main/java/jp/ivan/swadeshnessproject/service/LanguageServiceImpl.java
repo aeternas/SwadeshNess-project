@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class LanguageServiceImpl {
+public class LanguageServiceImpl implements LanguageService {
     @Autowired
     LanguageRepository languageRepository;
 
