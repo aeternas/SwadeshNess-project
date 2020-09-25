@@ -4,4 +4,4 @@ CREATE TABLE language(
      name VARCHAR(20)
 );
 
-INSERT INTO language(version, name) VALUES('1', 'Russian');
+INSERT INTO language(version, name) VALUES(1, 'Russian');
