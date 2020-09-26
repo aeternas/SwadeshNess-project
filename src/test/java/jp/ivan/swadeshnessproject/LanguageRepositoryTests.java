@@ -2,6 +2,7 @@ package jp.ivan.swadeshnessproject;
 
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
 import jp.ivan.swadeshnessproject.entity.Language;
+import jp.ivan.swadeshnessproject.entity.LanguageFamily;
 import jp.ivan.swadeshnessproject.repository.LanguageRepository;
 import org.apache.commons.codec.language.bm.Lang;
 import org.junit.jupiter.api.Test;
@@ -20,13 +21,14 @@ public class LanguageRepositoryTests {
 
     @Test
     void testEmbeddedDatabase() {
-        Optional<Language> orderOptional = languageRepository.findById(1L);
+        Optional<Language> languageOptional = languageRepository.findById(1L);
 
-        assertThat(orderOptional).hasValueSatisfying(order -> {
-            assertThat(order).isNotNull();
-            assertThat(order.getId()).isNotNull();
-            assertThat(order.getName()).isNotNull();
-            assertThat(order.getVersion()).isNotNull();
+        assertThat(languageOptional).hasValueSatisfying(language -> {
+            assertThat(language).isNotNull();
+            assertThat(language.getId()).isNotNull();
+            assertThat(language.getName()).isNotNull();
+            assertThat(language.getVersion()).isNotNull();
+            assertThat(language.getFamily().getName()).isEqualTo("Slavic");
         });
     }
 }

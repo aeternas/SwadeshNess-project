@@ -1,5 +1,6 @@
 package jp.ivan.swadeshnessproject.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,4 +25,10 @@ public class Language implements Serializable {
     @Column
     @Getter
     String name;
+
+    @Getter
+    @ManyToOne
+    @JoinColumn(name = "family_id")
+    @JsonIgnore
+    LanguageFamily family;
 }
