@@ -23,7 +23,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - uses: actions/upload-artifact@v2
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
       with:
         name: push-artifact
         path: target/swadeshness-project-0.2.0-SNAPSHOT.jar
