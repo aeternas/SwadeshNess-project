@@ -33,6 +33,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Upload artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: swadeshness-SNAPSHOT
+        path: .
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag swadeshness-project:$(date +%s)
