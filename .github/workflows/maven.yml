@@ -29,6 +29,7 @@ jobs:
         path: target/swadeshness-project-0.2.0-SNAPSHOT.jar
 
   build-docker-image:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
