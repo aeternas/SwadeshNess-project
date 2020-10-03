@@ -21,8 +21,10 @@ public class LanguageFamilyRepositoryTests {
 
     @Test
     void testEmbeddedDatabase() {
+        // when
         Optional<LanguageFamily> languageFamilyOptionalOptional = languageFamilyRepository.findById(1L);
 
+        // then
         assertThat(languageFamilyOptionalOptional).hasValueSatisfying(family -> {
             assertThat(family).isNotNull();
             assertThat(family.getId()).isNotNull();
