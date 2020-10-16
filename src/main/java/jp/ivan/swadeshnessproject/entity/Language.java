@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Data
 @Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -13,20 +14,16 @@ import java.io.Serializable;
 public class Language implements Serializable {
     @Id
     @Column
-    @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @Column
     @Version
-    @Getter
     Long version;
 
     @Column
-    @Getter
     String name;
 
-    @Getter
     @ManyToOne
     @JoinColumn(name = "family_id")
     @JsonIgnore
