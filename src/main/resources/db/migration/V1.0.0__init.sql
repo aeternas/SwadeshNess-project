@@ -11,6 +11,7 @@ CREATE TABLE language(
      family_id integer REFERENCES language_family(id)
 );
 
-INSERT INTO language_family(name) VALUES('Slavic');
+INSERT INTO language_family(name) VALUES('Slavic', 'Romance');
 
 INSERT INTO language(name, family_id) SELECT 'Russian', id FROM language_family WHERE language_family.name = 'Slavic';
+INSERT INTO language(name, family_id) SELECT 'Spanish', id FROM language_family WHERE language_family.name = 'Romance';

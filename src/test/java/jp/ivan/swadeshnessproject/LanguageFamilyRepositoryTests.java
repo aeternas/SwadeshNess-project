@@ -21,10 +21,10 @@ public class LanguageFamilyRepositoryTests {
     @Test
     void testEmbeddedDatabase() {
         // when
-        Optional<LanguageFamily> languageFamilyOptionalOptional = languageFamilyRepository.findById(1L);
+        Optional<LanguageFamily> languageFamilyOptional = languageFamilyRepository.findById(1L);
 
         // then
-        assertThat(languageFamilyOptionalOptional).hasValueSatisfying(family -> {
+        assertThat(languageFamilyOptional).hasValueSatisfying(family -> {
             assertThat(family).isNotNull();
             assertThat(family.getId()).isNotNull();
             assertThat(family.getName()).isNotNull();
