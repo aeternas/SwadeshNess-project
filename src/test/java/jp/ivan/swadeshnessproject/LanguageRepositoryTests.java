@@ -2,9 +2,7 @@ package jp.ivan.swadeshnessproject;
 
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
 import jp.ivan.swadeshnessproject.entity.Language;
-import jp.ivan.swadeshnessproject.entity.LanguageFamily;
 import jp.ivan.swadeshnessproject.repository.LanguageRepository;
-import org.apache.commons.codec.language.bm.Lang;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
