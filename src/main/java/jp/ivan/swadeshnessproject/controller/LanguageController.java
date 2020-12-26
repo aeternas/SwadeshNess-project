@@ -19,13 +19,13 @@ public class LanguageController {
     @Autowired
     LanguageFamilyService languageFamilyService;
 
-    @GetMapping("/language")
+    @GetMapping("/v2/language")
     ResponseEntity<List<Language>> listLanguages() {
         val languageList = languageService.findAll();
         return ResponseEntity.ok(languageList);
     }
 
-    @GetMapping("/languageFamily")
+    @GetMapping("/v2/languageFamily")
     ResponseEntity<List<LanguageFamily>> listLanguageFamilies() {
         val languageFamiliesList = languageFamilyService.findAll();
         return ResponseEntity.ok(languageFamiliesList);
