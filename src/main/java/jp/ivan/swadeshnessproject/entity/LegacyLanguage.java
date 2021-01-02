@@ -12,22 +12,12 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "language")
 public class LegacyLanguage implements Serializable {
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @Column
-    @Version
     Long version;
 
-    @Column
     String name;
 
-    @ManyToOne
-    @JoinColumn(name = "family_id")
-    @JsonIgnore
     LanguageFamily family;
 }
