@@ -21,7 +21,7 @@ public class LanguageController {
 
     @GetMapping("/v2/language")
     ResponseEntity<List<Language>> listLanguages() {
-        val languageList = languageService.translate("", new LanguageFamily());
+        val languageList = languageService.translate("", new LanguageFamily())
         return ResponseEntity.ok(languageList);
     }
 

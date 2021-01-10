@@ -1,7 +1,6 @@
 package jp.ivan.swadeshnessproject;
 
 import jp.ivan.swadeshnessproject.entity.Language;
-import jp.ivan.swadeshnessproject.entity.LanguageFamily;
 import jp.ivan.swadeshnessproject.repository.LanguageRepository;
 import jp.ivan.swadeshnessproject.service.LanguageServiceImpl;
 import lombok.val;
@@ -42,13 +41,13 @@ public class LanguageServiceImplTests {
         // given
         val expectedLanguage = mock(Language.class);
         List<Language> languagesList = Arrays.asList(new Language[] { expectedLanguage });
-        LanguageFamily languageFamily = new LanguageFamily();
         when(languageRepository.findAll()).thenReturn(languagesList);
 
         // when
-        val result = service.translate("", languageFamily);
+        val result = service.findAll();
 
         // then
-        assertThat(result).isNull();
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0)).isEqualTo(expectedLanguage);
     }
 }
